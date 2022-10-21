@@ -16,7 +16,7 @@ ReactDOM.render(
       /* Uncomment the following lines for better support  in browers like Safari where third-party cookies are blocked.
          See https://auth0.com/docs/libraries/auth0-single-page-app-sdk#change-storage-options for risks. */
       // cacheLocation="localstorage",
-      // useRefreshTokens={true}
+      useRefreshTokens={true}
     >
       <App />
     </Auth0Provider>
@@ -32,4 +32,4 @@ serviceWorkerRegistration.unregister();
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals(console.log);
