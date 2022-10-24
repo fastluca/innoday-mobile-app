@@ -107,3 +107,19 @@ If you have found a bug or if you have a feature request, please report them at 
 ## License
 
 This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
+
+
+## How to setup for ios
+
+Follow this [guide](https://ionicframework.com/docs/developing/ios#running-with-the-ionic-cli)
+
+```shell
+brew install cocoapods
+xcode-select --install
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+npx @ionic/cli capacitor copy ios
+npx @ionic/cli capacitor update
+
+npm run start:ios
+```
