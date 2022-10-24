@@ -1,6 +1,9 @@
 {
-	"appId": "com.auth0.samples",
-	"appName": "Auth0 Samples",
+	"appId": "ch.axa.innoday",
+	"appName": "AXA Innoday mobile app",
 	"webDir": "build",
-	"plugins": {}
+	"plugins": {},
+	"server": {
+		"url": "http://192.168.209.189:3000"
+	}
 }
