@@ -2,8 +2,5 @@
 	"appId": "ch.axa.innoday",
 	"appName": "AXA Innoday mobile app",
 	"webDir": "build",
-	"plugins": {},
-	"server": {
-		"url": "http://192.168.209.189:3000"
-	}
+	"plugins": {}
 }

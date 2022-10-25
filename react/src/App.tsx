@@ -6,6 +6,7 @@ import { Browser } from "@capacitor/browser";
 import { useAuth0 } from "@auth0/auth0-react";
 import { callbackUri } from "./auth.config";
 import Home from "./pages/Home";
+import Welcome from "./pages/Welcome";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -34,8 +35,11 @@ setupIonicReact({
 const App: React.FC = () => {
   const { handleRedirectCallback } = useAuth0();
 
+  console.log("Callback URI " + callbackUri);
+
   useEffect(() => {
     CapApp.addListener("appUrlOpen", async ({ url }) => {
+      console.log("Callback URI " + callbackUri);
       if (url.startsWith(callbackUri)) {
         if (
           url.includes("state") &&
@@ -55,6 +59,9 @@ const App: React.FC = () => {
         <IonRouterOutlet>
           <Route exact path="/home">
             <Home />
+          </Route>
+          <Route exact path="/welcome">
+            <Welcome />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />
