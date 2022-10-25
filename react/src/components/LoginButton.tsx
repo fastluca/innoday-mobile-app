@@ -6,7 +6,7 @@ const LoginButton: React.FC = () => {
   const { buildAuthorizeUrl } = useAuth0();
 
   const login = async () => {
-    const url = await buildAuthorizeUrl();
+    const url = await buildAuthorizeUrl({ audience: "https://neo.axa.ch" });
     await Browser.open({ url, windowName: "_self" });
   };
 

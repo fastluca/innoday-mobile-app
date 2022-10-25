@@ -1,5 +1,5 @@
-import React from "react";
+import { IonSpinner } from "@ionic/react";
 
 export const Spinner = () => {
-  return <div>Loading…</div>;
+  return <IonSpinner />;
 };

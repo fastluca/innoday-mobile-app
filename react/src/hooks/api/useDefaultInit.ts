@@ -6,7 +6,10 @@ export const useDefaultInitBuilder = () => {
 
   return async () => {
     try {
-      const accessToken = await getAccessTokenSilently();
+      const accessToken = await getAccessTokenSilently({
+        audience: "https://neo.axa.ch",
+        scope: "openid email",
+      });
 
       return {
         headers: {
