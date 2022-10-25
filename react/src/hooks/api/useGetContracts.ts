@@ -7,7 +7,7 @@ export const useGetAllContracts = (partnerNumber: string) => {
 
   return useQuery(["contracts", partnerNumber], async () => {
     try {
-      return await apiClient.contract.getAllContracts(
+      return await apiClient.contract.getContracts(
         { partnerNumber },
         await buildDefaultInit()
       );
