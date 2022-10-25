@@ -1,5 +1,3 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
 import { useAuth0 } from "@auth0/auth0-react";
 import { App as CapApp } from "@capacitor/app";
 import { Browser } from "@capacitor/browser";
@@ -33,8 +31,6 @@ setupIonicReact({
   mode: "md",
 });
 
-const queryClient = new QueryClient();
-
 const App = () => {
   const { handleRedirectCallback } = useAuth0();
 
@@ -55,18 +51,16 @@ const App = () => {
 
   return (
     <IonApp>
-      <QueryClientProvider client={queryClient}>
-        <IonReactRouter>
-          <IonRouterOutlet>
-            <Route exact path="/home">
-              <Home />
-            </Route>
-            <Route exact path="/">
-              <Redirect to="/home" />
-            </Route>
-          </IonRouterOutlet>
-        </IonReactRouter>
-      </QueryClientProvider>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+        </IonRouterOutlet>
+      </IonReactRouter>
     </IonApp>
   );
 };

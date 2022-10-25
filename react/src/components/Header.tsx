@@ -6,7 +6,7 @@ import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import { Spinner } from "./Spinner";
 
-export const Header = (props: {}) => {
+export const Header = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {

@@ -1,24 +1,34 @@
+import { AppState, Auth0Provider } from "@auth0/auth0-react";
 import React from "react";
 import ReactDOM from "react-dom";
-import { Auth0Provider } from "@auth0/auth0-react";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { callbackUri, clientId, domain as auth0Domain } from "./auth.config";
 import reportWebVitals from "./reportWebVitals";
-import { domain as auth0Domain, clientId, callbackUri } from "./auth.config";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+
+const queryClient = new QueryClient();
+
+const onRedirectCallback = (appState?: AppState) =>
+  window.location.replace(appState?.returnTo || window.location.pathname);
 
 ReactDOM.render(
   <React.StrictMode>
+    <h1>Axa splash</h1>
     <Auth0Provider
       domain={auth0Domain}
       clientId={clientId}
       redirectUri={callbackUri}
+      onRedirectCallback={onRedirectCallback}
       /* Uncomment the following lines for better support  in browers like Safari where third-party cookies are blocked.
-         See https://auth0.com/docs/libraries/auth0-single-page-app-sdk#change-storage-options for risks. */
+See https://auth0.com/docs/libraries/auth0-single-page-app-sdk#change-storage-options for risks. */
       // cacheLocation="localstorage",
       useRefreshTokens={true}
     >
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
     </Auth0Provider>
   </React.StrictMode>,
   document.getElementById("root")
