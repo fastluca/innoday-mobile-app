@@ -1,0 +1,12 @@
+ion-toolbar {
+  --background: #19422d;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+ion-avatar {
+  --border-radius: 4px;
+}

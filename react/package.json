@@ -47,7 +47,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:ios": "ionic capacitor run ios -l --external --port 3000",
+    "start:ios": "ionic capacitor run ios -l --external",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns",
     "eject": "react-scripts eject",
