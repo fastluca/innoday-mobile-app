@@ -7,17 +7,18 @@ import {
 } from "@ionic/react";
 
 import { useAuth0 } from "@auth0/auth0-react";
-import "./Home.css";
+import { AppService } from "../components/AppService";
 import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
 import Profile from "../components/Profile";
-import { AppService } from "../components/AppService";
+import { Spinner } from "../components/Spinner";
+import "./Home.css";
 
 const Home: React.FC = () => {
   const { isLoading, isAuthenticated } = useAuth0();
 
   if (isLoading) {
-    return null;
+    return <Spinner />;
   }
 
   return (
