@@ -49,7 +49,8 @@
     "start:ios": "ionic capacitor run ios -l --external --port 3000",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "openapi:generate": "./scripts/openapi.generate.sh"
   },
   "eslintConfig": {
     "extends": [

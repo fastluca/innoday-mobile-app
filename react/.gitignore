@@ -29,3 +29,5 @@ yarn-error.log*
 .eslintcache
 auth.config.ts
 android/.idea/
+
+src/openapi
