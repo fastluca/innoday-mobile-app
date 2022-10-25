@@ -1,11 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useGetAllUsers } from "../hooks/api/useGetAllUsers";
+import { useGetAllContracts } from "../hooks/api/useGetContracts";
 import { Spinner } from "./Spinner";
 
-export const AppService = () => {
+export const MyContracts = () => {
   const { isLoading: isLoadingAuth, isAuthenticated } = useAuth0();
 
-  const { data: users, error, isLoading: isLoadingQuery } = useGetAllUsers();
+  const {
+    data,
+    error,
+    isLoading: isLoadingQuery,
+  } = useGetAllContracts("39128722");
 
   if (error) {
     return (
@@ -23,5 +27,5 @@ export const AppService = () => {
     return null;
   }
 
-  return <div>{JSON.stringify(users)}</div>;
+  return <div>{JSON.stringify(data)}</div>;
 };

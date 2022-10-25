@@ -7,14 +7,14 @@ import {
 } from "@ionic/react";
 
 import { useAuth0 } from "@auth0/auth0-react";
-import { AppService } from "../components/AppService";
 import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
+import { MyContracts } from "../components/MyContracts";
 import Profile from "../components/Profile";
 import { Spinner } from "../components/Spinner";
 import "./Home.css";
 
-const Home: React.FC = () => {
+const Home = () => {
   const { isLoading, isAuthenticated } = useAuth0();
 
   if (isLoading) {
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
         <div className="container">
           <Profile />
           {isAuthenticated ? <LogoutButton /> : <LoginButton />}
-          <AppService />
+          <MyContracts />
         </div>
       </IonContent>
     </IonPage>
