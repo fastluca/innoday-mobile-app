@@ -34,11 +34,8 @@ setupIonicReact({
 const App: React.FC = () => {
   const { handleRedirectCallback } = useAuth0();
 
-  console.log("Callback URI " + callbackUri);
-
   useEffect(() => {
     CapApp.addListener("appUrlOpen", async ({ url }) => {
-      console.log("Callback URI " + callbackUri);
       if (url.startsWith(callbackUri)) {
         if (
           url.includes("state") &&
