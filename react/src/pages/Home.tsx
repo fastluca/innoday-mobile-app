@@ -11,6 +11,7 @@ import "./Home.css";
 import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
 import Profile from "../components/Profile";
+import { AppService } from "../components/AppService";
 
 const Home: React.FC = () => {
   const { isLoading, isAuthenticated } = useAuth0();
@@ -35,6 +36,7 @@ const Home: React.FC = () => {
         <div className="container">
           <Profile />
           {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+          <AppService />
         </div>
       </IonContent>
     </IonPage>
